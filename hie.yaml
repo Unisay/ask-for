@@ -1,0 +1,7 @@
+cradle:
+  cabal:
+    component: "lib:ask-for"
+dependencies:
+  - ask-for.cabal
+  - ask-for.nix
+  - shell.nix

@@ -1,0 +1,7 @@
+:set -Wno-deprecations
+:set -Wno-missing-local-signatures
+:set -XDataKinds
+:set -XTypeApplications
+:set -XTypeOperators
+import GHC.Generics
+import Ask

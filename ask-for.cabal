@@ -1,0 +1,51 @@
+cabal-version: 2.4
+
+name: ask-for
+version: 0.1.0.0
+-- synopsis:
+-- description:
+-- bug-reports:
+license: MIT
+license-file: LICENSE
+author: Yuriy Lazaryev
+maintainer: unisay@users.noreply.github.com
+copyright: Yuriy Lazaryev
+category: library
+build-type: Simple
+extra-source-files: CHANGELOG.md
+
+common deps
+  build-depends: 
+    base >=4.13 && <4.14,
+    relude ^>= 0.6.0.0
+
+common opts
+  default-language: Haskell2010
+  default-extensions: NoImplicitPrelude
+  ghc-options: 
+    -Wall 
+    -Wcompat 
+    -Widentities 
+    -Wincomplete-record-updates 
+    -Wincomplete-uni-patterns 
+    -Werror=incomplete-patterns
+    -Wredundant-constraints 
+    -Wpartial-fields 
+    -Wtabs 
+    -Wmissing-local-signatures 
+    -fhelpful-errors 
+    -fprint-expanded-synonyms 
+    -fwarn-unused-do-bind
+
+library
+  import: deps, opts
+  hs-source-dirs: src
+  exposed-modules: Ask
+
+test-suite tests
+  import: deps, opts
+  hs-source-dirs: test
+  other-modules: Fixture
+  main-is: Main.hs
+  type: exitcode-stdio-1.0
+  build-depends: ask-for
